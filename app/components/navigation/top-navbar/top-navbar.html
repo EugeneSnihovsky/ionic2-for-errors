@@ -5,17 +5,8 @@
 
     <div>
         <ion-segment class="authorized-links" [(ngModel)]="pet">
-            <ion-segment-button value="1" (click)="openPage('start')">
-                <ion-icon name="chatboxes"></ion-icon>
-            </ion-segment-button>
-            <ion-segment-button value="2" (click)="openPage('home')">
-                <ion-icon name="construct" is-active="false"></ion-icon>
-            </ion-segment-button>
             <ion-segment-button value="2" (click)="openPage('settings')">
-                <ion-icon name="globe" is-active="false"></ion-icon>
-            </ion-segment-button>
-            <ion-segment-button value="2" (click)="openPage('nonavbar')">
-                <ion-icon name="eye-off" is-active="false"></ion-icon>
+                Settings link (not work)
             </ion-segment-button>
         </ion-segment>
     </div>
@@ -29,37 +20,15 @@
 
     <ion-content>
         <ion-list>
-            <button class="ion-menu-button"
-                    ion-item
-                    menuClose
-                    (click)="openPage('start')">
-                <ion-icon item-left name="chatboxes"></ion-icon>
-                Start page...
-            </button>
-
-            <button class="ion-menu-button"
-                    ion-item
-                    menuClose
-                    (click)="openPage('home')">
-                <ion-icon item-left name="construct"></ion-icon>
-                Home...
-            </button>
 
             <button class="ion-menu-button"
                     ion-item
                     menuClose
                     (click)="openPage('settings')">
                 <ion-icon item-left name="globe"></ion-icon>
-                Settings...
+                Settings link (not work)
             </button>
 
-            <button class="ion-menu-button"
-                    ion-item
-                    menuClose
-                    (click)="openPage('nonavbar')">
-                <ion-icon item-left name="eye-off"></ion-icon>
-                Without navbar...
-            </button>
         </ion-list>
     </ion-content>
 </ion-menu>

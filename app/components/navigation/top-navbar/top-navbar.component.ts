@@ -3,11 +3,7 @@
 import {NavbarTemplate, Navbar, Item, Icon, Segment, SegmentButton, Menu, MenuToggle, MenuClose, NavController, NavParams} from 'ionic-framework/ionic';
 import {Component} from 'angular2/core';
 
-
-import {SignInPage} from '../../auth/sign-in/sign-in.page';
-import {HomePage} from '../../main/home/home.page';
 import {SettingsPage} from '../../main/settings/settings.page';
-import {NoNavbarPage} from '../../main/no-navbar/no-navbar.page';
 
 @Component({
     selector: 'top-navbar',
@@ -28,14 +24,6 @@ export class TopNavBarComponent {
     openPage(name) {
         var self = this;
 
-        if (name === 'start') {
-            self.navCtrl.setRoot(SignInPage);
-        } else if (name === 'home') {
-            self.navCtrl.setRoot(HomePage);
-        } else if (name === 'settings') {
-            self.navCtrl.setRoot(SettingsPage);
-        } else if (name === 'nonavbar') {
-            self.navCtrl.setRoot(NoNavbarPage);
-        }
+        self.navCtrl.setRoot(SettingsPage);
     }
 }

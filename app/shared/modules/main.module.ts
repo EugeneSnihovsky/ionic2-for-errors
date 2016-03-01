@@ -3,8 +3,7 @@
 
 import {App, Platform} from 'ionic-framework/ionic';
 
-import {SignInPage} from '../../components/auth/sign-in/sign-in.page';
-
+import {HomePage} from '../../components/main/home/home.page';
 
 //* this is good feature for compare type of pages, but it didn't work now
 // https://angular.io/docs/ts/latest/api/core/Type-interface.html
@@ -17,7 +16,7 @@ import {SignInPage} from '../../components/auth/sign-in/sign-in.page';
     config: {} // http://ionicframework.com/docs/v2/api/config/Config/
 })
 export class MyApp {
-    rootPage: any = SignInPage;
+    rootPage: any = HomePage;
 
     constructor(platform: Platform) {
         platform.ready().then(() => {

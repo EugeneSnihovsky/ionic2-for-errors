@@ -4,9 +4,12 @@
     </ion-navbar>
 
     <div>
-        <ion-segment class="authorized-links" [(ngModel)]="pet">
-            <ion-segment-button value="2" (click)="openPage('settings')">
-                Settings link (not work)
+        <ion-segment class="authorized-links" [(ngModel)]="currentPageName">
+            <ion-segment-button value="home" (click)="openPage('home')">
+                Home
+            </ion-segment-button>
+            <ion-segment-button value="settings" (click)="openPage('settings')">
+                Settings
             </ion-segment-button>
         </ion-segment>
     </div>
@@ -24,9 +27,17 @@
             <button class="ion-menu-button"
                     ion-item
                     menuClose
+                    (click)="openPage('home')">
+                <ion-icon item-left name="globe"></ion-icon>
+                Home
+            </button>
+
+            <button class="ion-menu-button"
+                    ion-item
+                    menuClose
                     (click)="openPage('settings')">
                 <ion-icon item-left name="globe"></ion-icon>
-                Settings link (not work)
+                Settings
             </button>
 
         </ion-list>

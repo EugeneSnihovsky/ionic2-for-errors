@@ -1,18 +1,21 @@
 'use strict';
+import {NavController} from 'ionic-framework/ionic';
+import {HomePage} from '../../main/home/home.page';
 
-import {forwardRef} from 'angular2/core';
 import {Page} from 'ionic-framework/ionic';
 
-import {TopNavBarComponent} from '../../navigation/top-navbar/top-navbar.component';
-
 @Page({
-    directives: [forwardRef(() => TopNavBarComponent)],
     templateUrl: 'build/components/main/settings/settings.html'
 })
 
 export class SettingsPage {
-
-    constructor() {
+    private navCtrl: any;
+    constructor(navCtrl: NavController) {
         var self = this;
+        self.navCtrl = navCtrl;
+    }
+
+    open() {
+        this.navCtrl.setRoot(HomePage);
     }
 }

@@ -1,4 +1,49 @@
-<top-navbar title="DASHBOARDS.TITLE"></top-navbar>
+<!--<top-navbar title="CALCULATOR.TITLE"></top-navbar>-->
+
+<div #content>
+    <ion-navbar *navbar>
+        <button menuToggle end>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+
+        <ion-title>
+            {{title | translate}}
+        </ion-title>
+    </ion-navbar>
+</div>
+
+<ion-menu side="right" [content]="content">
+    <ion-toolbar class="ion-menu-logo">
+        <ion-title>{{'TOP_NAVBAR.TITLE' | translate}}</ion-title>
+    </ion-toolbar>
+
+    <ion-content>
+        <ion-list>
+            <button class="ion-menu-button"
+                    ion-item
+                    menuClose
+                    (click)="openPage('calculator')">
+                <ion-icon item-left name="ios-cash-outline"></ion-icon>
+                <span>{{'TOP_NAVBAR.MENU.CALCULATOR' | translate}}</span>
+            </button>
+            <button class="ion-menu-button"
+                    ion-item
+                    menuClose
+                    (click)="openPage('dashboards', {checkAuth: true})">
+                <ion-icon item-left name="ios-clipboard-outline"></ion-icon>
+                <span>{{'TOP_NAVBAR.MENU.DASHBOARDS' | translate}}</span>
+            </button>
+            <button *ngIf="authorized"
+                    class="ion-menu-button"
+                    ion-item
+                    menuClose
+                    (click)="logOut()">
+                <ion-icon item-left name="log-out"></ion-icon>
+                <span>{{'TOP_NAVBAR.MENU.LOG_OUT' | translate}}</span>
+            </button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
 
 <ion-content>
         <ion-segment [(ngModel)]="currentView" class="portrait-navigation">

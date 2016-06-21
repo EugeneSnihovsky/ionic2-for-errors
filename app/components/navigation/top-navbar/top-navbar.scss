@@ -1,22 +1,20 @@
-top-navbar {
-  ion-menu {
-    z-index: 10;
-    background: rgba(255,255,255,0.8);
+ion-menu {
+  z-index: 10;
+  background: rgba(255,255,255,0.8);
 
-    ion-toolbar {
-      .toolbar-title {
-        color: $second-text-color;
-      }
+  ion-toolbar {
+    .toolbar-title {
+      color: $second-text-color;
     }
+  }
 
-    scroll-content {
-      background-color: rgba(255,255,255,0.6);
+  scroll-content {
+    background-color: rgba(255,255,255,0.6);
 
-      button.item {
-        background-color: white;
-        color: $second-text-color;
-        font-weight: bold;
-      }
+    button.item {
+      background-color: white;
+      color: $second-text-color;
+      font-weight: bold;
     }
   }
 }

@@ -1,5 +1,5 @@
 'use strict';
-import {Component, forwardRef} from '@angular/core';
+import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 
 import {TopNavBarComponent} from '../../navigation/top-navbar/top-navbar.component';
@@ -7,7 +7,7 @@ import {TopNavBarComponent} from '../../navigation/top-navbar/top-navbar.compone
 
 
 @Component({
-    directives: [forwardRef(() => TopNavBarComponent)],
+    directives: [TopNavBarComponent],
     templateUrl: 'build/components/main/dashboards/dashboards.html'
 })
 

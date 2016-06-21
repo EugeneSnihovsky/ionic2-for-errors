@@ -28,8 +28,6 @@ export class TopNavBarComponent {
     ) { }
 
     public openPage(name: string) {
-        setTimeout(() => {
-            this.navCtrl.setRoot(this.pages[name]);
-        }, 100);
+        this.navCtrl.setRoot(this.pages[name]);
     }
 }

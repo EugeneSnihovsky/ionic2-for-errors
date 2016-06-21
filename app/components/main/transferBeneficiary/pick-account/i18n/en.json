@@ -1,0 +1,21 @@
+{
+  "PICK_ACCOUNT": {
+    "TITLE": "Pick account",
+    "FORM": {
+      "BENEFICIARY_NAME": {
+        "LABEL": "Beneficiary name"
+      },
+      "CONTENT": {
+        "NOT_FOUND": "No beneficiaries found...",
+        "ACC": "Acc #"
+      },
+      "BUTTONS": {
+        "CREATE_NEW": "Create new"
+      }
+    },
+    "LOADING": {
+      "MATCH_SEARCH": "Search for matches..",
+      "WAIT_FOR_DETAILS": "Receive user info..."
+    }
+  }
+}

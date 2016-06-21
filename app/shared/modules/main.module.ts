@@ -1,26 +1,45 @@
-///<reference path="../../../node_modules/angular2/typings/browser.d.ts"/> // 2.0.0-beta.6 breacking change
 'use strict';
 
-import {App, Platform} from 'ionic-framework/ionic';
+import {Component, provide, Type} from '@angular/core';//https://angular.io/docs/ts/latest/api/core/Type-interface.html
+import {Http} from '@angular/http';
+import {TranslateService, TranslateLoader, TranslateStaticLoader} from 'ng2-translate/ng2-translate';
+import {ionicBootstrap, Platform} from 'ionic-angular';
 
-import {HomePage} from '../../components/main/home/home.page';
+import {CalculatorPage} from '../../components/main/calculator/calculator.page';
 
-//* this is good feature for compare type of pages, but it didn't work now
-// https://angular.io/docs/ts/latest/api/core/Type-interface.html
-// import {Type} from 'angular2/core';
-
-@App({
+@Component({
     template: `
     <ion-nav [root]="rootPage"></ion-nav>
-    `,
-    config: {} // http://ionicframework.com/docs/v2/api/config/Config/
+    `
 })
 export class MyApp {
-    rootPage: any = HomePage;
+    rootPage: Type; // initialization in translationConfig()
 
-    constructor(platform: Platform) {
+    constructor(
+        platform: Platform,
+        private translate: TranslateService
+    ) {
         platform.ready().then(() => {
-            //**
+            this.translationConfig();
         });
     }
+
+    translationConfig() {
+        var userLang = navigator.language.split('-')[0]; // use navigator lang if available
+        userLang = /(zh|en)/gi.test(userLang) ? userLang : 'en';
+
+        this.translate.setDefaultLang('en');
+        this.translate.use(userLang)
+            .subscribe(langObj => {
+                this.rootPage = CalculatorPage;
+            })
+    }
 }
+
+ionicBootstrap(MyApp, [
+        TranslateService,
+        provide(TranslateLoader, {
+            useFactory: (http: Http) => new TranslateStaticLoader(http, 'build/assets/i18n', '.json'),
+            deps: [Http]
+        })],
+    {/*config placed here*/}); // http://ionicframework.com/docs/v2/api/config/Config/

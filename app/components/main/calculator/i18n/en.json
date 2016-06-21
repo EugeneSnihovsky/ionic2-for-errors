@@ -1,0 +1,19 @@
+{
+  "CALCULATOR": {
+    "TITLE": "New transfer",
+    "FORM": {
+      "TITLE": {
+        "I_HAVE": "I have",
+        "I_WANT": "I want"
+      },
+      "INDICATIVE_RATE": "Indicative rate:",
+      "BUTTON": {
+        "NEW_TRANSFER": "New transfer"
+      }
+    },
+    "LOADING": {
+      "UPDATE_DATA": "Update data...",
+      "GET_CURRENCIES": "Get available currencies..."
+    }
+  }
+}

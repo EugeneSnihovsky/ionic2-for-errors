@@ -1,0 +1,9 @@
+{
+  "DASHBOARDS": {
+    "TITLE": "Dashboards",
+    "MENU": {
+      "LOG_OUT": "Log out...",
+      "SETTINGS": "Settings..."
+    }
+  }
+}

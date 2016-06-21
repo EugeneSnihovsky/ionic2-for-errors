@@ -1,0 +1,15 @@
+<top-navbar title="CALCULATOR.TITLE"></top-navbar>
+
+<ion-content>
+    <form #calcForm="ngForm" class="calculator-form">
+        <div class="calculation-buttons">
+            <button block
+                    class="new-transfer-button"
+                    type="button"
+                    (click)="newTransfer()"
+                    [disabled]="freezeAll">
+                <span>{{'CALCULATOR.FORM.BUTTON.NEW_TRANSFER' | translate}}</span>
+            </button>
+        </div>
+    </form>
+</ion-content>

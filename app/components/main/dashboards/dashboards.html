@@ -1,0 +1,26 @@
+<top-navbar title="DASHBOARDS.TITLE"></top-navbar>
+
+<ion-content>
+        <ion-segment [(ngModel)]="currentView" class="portrait-navigation">
+            <ion-segment-button value="accountBalance">
+                <b>Account balance</b>
+            </ion-segment-button>
+            <ion-segment-button value="recentTransfers">
+                <b>Recent transfers</b>
+            </ion-segment-button>
+        </ion-segment>
+
+    <div [ngSwitch]="currentView" class="portrait-view">
+        <ion-list *ngSwitchCase="'accountBalance'">
+            <ion-item>
+                <span>Account balance places here</span>
+            </ion-item>
+        </ion-list>
+
+        <ion-list *ngSwitchCase="'recentTransfers'">
+            <ion-item>
+                <span>Recent transfers places here</span>
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-content>

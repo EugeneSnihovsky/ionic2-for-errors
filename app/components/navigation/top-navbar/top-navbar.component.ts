@@ -1,29 +1,35 @@
 'use strict';
 
-import {NavbarTemplate, Navbar, Item, Icon, Segment, SegmentButton, Menu, MenuToggle, MenuClose, NavController, NavParams} from 'ionic-framework/ionic';
-import {Component} from 'angular2/core';
+import {IONIC_DIRECTIVES} from 'ionic-angular/config/directives';
+import {NavController} from 'ionic-angular';
+import {Component, Input} from '@angular/core';
+import {TranslatePipe} from 'ng2-translate/ng2-translate';
 
-import {SettingsPage} from '../../main/settings/settings.page';
+import {CalculatorPage} from '../../main/calculator/calculator.page';
+import {DashboardsPage} from '../../main/dashboards/dashboards.page';
 
 @Component({
     selector: 'top-navbar',
     templateUrl: 'build/components/navigation/top-navbar/top-navbar.html',
-    directives: [NavbarTemplate, Navbar, Item, Icon, Segment, SegmentButton, Menu, MenuToggle, MenuClose]
+    directives: [IONIC_DIRECTIVES],
+    pipes: [TranslatePipe]
 })
 
 export class TopNavBarComponent {
-    private navCtrl: any;
-    private navParams: any;
+    @Input() title: string;
 
-    constructor(navCtrl: NavController, navParams: NavParams) {
-        var self = this;
-        self.navCtrl = navCtrl;
-        self.navParams = navParams;
-    }
+    public pages: any = {
+        dashboards: DashboardsPage,
+        calculator: CalculatorPage
+    };
 
-    openPage(name) {
-        var self = this;
+    constructor(
+        private navCtrl: NavController
+    ) { }
 
-        self.navCtrl.setRoot(SettingsPage);
+    public openPage(name: string) {
+        setTimeout(() => {
+            this.navCtrl.setRoot(this.pages[name]);
+        }, 100);
     }
 }

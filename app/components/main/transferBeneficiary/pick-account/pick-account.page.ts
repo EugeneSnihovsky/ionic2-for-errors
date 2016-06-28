@@ -3,11 +3,9 @@ import {Component} from '@angular/core';
 import {TranslatePipe} from 'ng2-translate/ng2-translate';
 import {NavController} from 'ionic-angular';
 
-import {TopNavBarComponent} from '../../../navigation/top-navbar/top-navbar.component';
 import {DashboardsPage} from '../../dashboards/dashboards.page';
 
 @Component({
-    directives: [TopNavBarComponent],
     templateUrl: 'build/components/main/transferBeneficiary/pick-account/pick-account.html',
     pipes: [TranslatePipe]
 })
